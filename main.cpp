@@ -35,7 +35,7 @@ int main() {
 
     for (auto&p : movies){
     double sum = 0;
-    for (int r : p.second) sum = r;
+    for (int r : p.second) sum += r;
     double avg = sum / p.second.size();
     averages[p.first] = avg;
 
