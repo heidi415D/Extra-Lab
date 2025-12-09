@@ -1,10 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <map>
+#include <vector>
 using namespace std;
 
 int main() {
-    ifstream file("movies.txt");
+    ifstream file("210-xc2-FA25.txt");
     if (!file.is_open()) {
         cout << "Could not open file." << endl;
         return 1;
@@ -16,16 +18,16 @@ int main() {
     int rating;
 
     while (file >> title >> rating) {
-       movies[title].push_back(0);
+       movies[title].push_back(rating);
     }
 
     for (auto&p : movies){
         cout << p.first << ": ";
         for (int r : p.second){
             cout << r << " ";
-            cout << endl;
-        }        
+        }      
+        cout << endl;  
     }
-    
+
     return 0;
 }
