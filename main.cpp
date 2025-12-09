@@ -10,12 +10,22 @@ int main() {
         return 1;
     }
 
+    map<string, vector<int>> movies;
+
     string title;
     int rating;
 
     while (file >> title >> rating) {
-        cout << title << " " << rating << endl;
+       movies[title].push_back(0);
     }
 
+    for (auto&p : movies){
+        cout << p.first << ": ";
+        for (int r : p.second){
+            cout << r << " ";
+            cout << endl;
+        }        
+    }
+    
     return 0;
 }
