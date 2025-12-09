@@ -29,12 +29,19 @@ int main() {
         cout << endl;  
     }
 
-    for (auto&p : movie){
+    int totalMovies = 0;
+    map<string, double> averages;
+    
+
+    for (auto&p : movies){
     double sum = 0;
     for (int r : p.second) sum = r;
-    double avg = sum / movies.size();
-    
+    double avg = sum / p.second.size();
+    averages[p.first] = avg;
+
     cout << p.first << " avg = " << avg << endl;
+    totalMovies++;
+
     }
 
     return 0;
