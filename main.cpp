@@ -29,5 +29,13 @@ int main() {
         cout << endl;  
     }
 
+    for (auto&p : movie){
+    double sum = 0;
+    for (int r : p.second) sum = r;
+    double avg = sum / movies.size();
+    
+    cout << p.first << " avg = " << avg << endl;
+    }
+
     return 0;
 }
