@@ -43,6 +43,24 @@ int main() {
     totalMovies++;
 
     }
+    double highest = 0;
+    
+    for (auto &p : averages){
+        if (p.second < highest){
+            highest = p.second;
+        }
+    }
 
-    return 0;
+    cout << "Highest average rating: " << highest << endl;
+    cout << "Movies with this rating:" << endl;
+
+    for (auto &p : averages){
+        if (p.second == highest){
+            cout << p.first << endl;
+    }
+    }   
+     return 0;
+
+
+
 }
