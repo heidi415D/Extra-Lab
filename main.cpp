@@ -46,7 +46,7 @@ int main() {
     double highest = 0;
     
     for (auto &p : averages){
-        if (p.second < highest){
+        if (p.second > highest){
             highest = p.second;
         }
     }
