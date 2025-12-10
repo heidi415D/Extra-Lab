@@ -53,6 +53,7 @@ int main() {
     cout << "avg = " << avg << endl;
     totalMovies++;
     }
+    cout << "Total movies: " << totalMovies << endl;
     cout << endl;
 
     // Milestone 3
