@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    ifstream file("210-xc2-FA25.txt");
+    ifstream file("movies.txt");
     if (!file.is_open()) {
         cout << "Could not open file." << endl;
         return 1;
@@ -21,6 +21,8 @@ int main() {
        movies[title].push_back(rating);
     }
 
+    // Milestone 1
+    cout << "----Milestone 1----" << endl;
     for (auto&p : movies){
         cout << p.first << ": ";
         for (int r : p.second){
@@ -28,21 +30,34 @@ int main() {
         }      
         cout << endl;  
     }
+    cout << endl;
 
+    // Milestone 2
+    cout << "----Milestone 2----" << endl;
     int totalMovies = 0;
     map<string, double> averages;
     
 
     for (auto&p : movies){
     double sum = 0;
-    for (int r : p.second) sum += r;
+    for (int r : p.second) {
+        sum += r;
+    }
     double avg = sum / p.second.size();
     averages[p.first] = avg;
 
-    cout << p.first << " avg = " << avg << endl;
-    totalMovies++;
-
+    cout << p.first << ": ";
+    for (int r : p.second){
+        cout << r << " ";
     }
+    cout << "avg = " << avg << endl;
+    totalMovies++;
+    }
+    cout << endl;
+
+    // Milestone 3
+    cout << "----Milestone 3----" << endl;
+    
     double highest = 0;
     
     for (auto &p : averages){
@@ -59,8 +74,19 @@ int main() {
             cout << p.first << endl;
     }
     }   
-     return 0;
+    cout << endl;
+     // Milestone 4
+    cout << "----Milestone 4----" << endl;
 
+    for (auto &p : movies) {
+        cout << p.first << ": ";
+        for (int r : p.second) {
+                cout << r << " ";
+    }
+cout << " (avg = " << averages[p.first] << ")" << endl;
+    }
+
+    return 0;   
 
 
 }
